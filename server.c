@@ -119,8 +119,6 @@ int main(void)
             perror("accept");
         }
         else {
-            printf("Got a connection from %s on port %d\n",
-                    inet_ntoa(their_addr.sin_addr), htons(their_addr.sin_port));
             /* Make a safe copy of newsock */
             int *safesock = malloc(sizeof(int));
             if (safesock) {
