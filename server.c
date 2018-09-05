@@ -38,7 +38,9 @@ void *handle(int *pnewsock)
   if (write(*pnewsock, RESPONSE, strlen(RESPONSE)) < 0)
     perror("ERROR writing to socket");
 
-  close(*pnewsock);
+  if (close(*pnewsock) < 0)
+    perror("close")
+
   free(pnewsock);
 
   return NULL;
