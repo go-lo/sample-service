@@ -39,7 +39,7 @@ void *handle(int *pnewsock)
     perror("ERROR writing to socket");
 
   if (close(*pnewsock) < 0)
-    perror("close")
+    perror("close");
 
   free(pnewsock);
 
