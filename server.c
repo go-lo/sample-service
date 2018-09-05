@@ -31,13 +31,13 @@ void *handle(int *pnewsock)
   bzero(buffer, 256);
 
   if (read(*pnewsock, buffer, 255) < 0)
-    fprintf(stderr, "ERROR reading from socket");
+    fprintf(stderr, "ERROR reading from socket\n");
 
   if (write(*pnewsock, RESPONSE, strlen(RESPONSE)) < 0)
-    perror("ERROR writing to socket");
+    fprintf(stderr, "ERROR writing to socket\n");
 
   if (close(*pnewsock) < 0)
-    perror("close");
+    fprintf(stderr, "Error closing socket\n");
 
   free(pnewsock);
 
