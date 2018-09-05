@@ -31,9 +31,7 @@ void *handle(int *pnewsock)
   bzero(buffer, 256);
 
   if (read(*pnewsock, buffer, 255) < 0)
-    perror("ERROR reading from socket");
-
-  free(buffer);
+    fprintf(stderr, "ERROR reading from socket");
 
   if (write(*pnewsock, RESPONSE, strlen(RESPONSE)) < 0)
     perror("ERROR writing to socket");
